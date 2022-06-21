@@ -1,0 +1,191 @@
+@import '~antd/dist/antd.css';
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+    background-color: #000000 !important;
+}
+
+
+.App {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000 !important;
+}
+
+.header-column-left {
+    background-color: #90A4AE;
+    height: 50px;
+    padding-top: 5px;
+    padding-left: 5px;
+    text-align: center;
+}
+
+.header-column-right {
+    background-color: #90A4AE;
+    height: 50px;
+    padding-top: 5px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.header-image {
+    height: 40px;
+    vertical-align: top;
+}
+
+.column-body {
+
+}
+
+
+.console {
+    height: 500px;
+    background-color: #90A4AE;
+    text-align: center;
+    padding-top: 25px;
+    vertical-align: middle;
+}
+
+.console-button {
+    width: 150px;
+}
+
+
+
+.console-testing-subpanel {
+    background-color: #e5e4e2;
+    padding-top: 20px;
+    height: 50px;
+}
+
+.editor-panel {
+    background-color: whitesmoke;
+    height: 500px;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.editor-canvas {
+    background-image: linear-gradient(180deg, grey, white);
+    height: 500px;
+    width: 100%;
+}
+
+.editor-panel-init {
+    padding-top: 100px;
+    background-color: whitesmoke;
+    height: 500px;
+    width: 100%;
+}
+
+.company-logo {
+    height: 16px;
+}
+
+.Footer {
+    padding-top: 10px;
+    background-color: #90A4AE;
+    height: 50px;
+}
+.footer-column-left {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.footer-column-center {
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+  
+.footer-column-right {
+    text-align: right;
+}
+
+.messenger {
+    height: 500px;
+    padding: 10px;
+     background-color: #90A4AE;
+}
+
+.messenger-form {
+    font-family: "Oxygen";
+    font-size: 20px;
+    padding-top: 25px;
+ /*   background-color: whitesmoke; */
+    height: 100%;
+    color: white;
+}
+
+
+.messenger-form-itemn {
+    font-family: "Oxygen";
+    font-size: 14px;
+}
+
+.messenger-error {
+    font-family: "Oxygen";
+    font-size: 20px;
+    color: rgb(247, 216, 216);
+
+  }
+
+  .messenger-success {
+    font-family: "Oxygen";
+    font-size: 20px;
+     color: white;
+  }
+
+.ant-spin-dot-item {
+    background-color:  #d18903;
+  }
+
+  .ant-form-item-label label{
+    font-size: 16px;
+    color: white;
+ }
+
+ ant-form-item-control-input {
+    font-weight: bold;
+ }

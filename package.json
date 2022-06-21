@@ -1,0 +1,12 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@sap/approuter": "10.5.1",
+    "@sap/html5-repo-mock": "2.1.0"
+  },
+  "scripts": {
+    "build-ui": "cd ui && if [ ! -d ${workspaceFolder}/ui3d/ui/node_modules/react-scripts ] && [ ! -d ${workspaceFolder}/ui3d/node_modules/react-scripts ]; then npm i; fi && npm run build"
+  }
+}

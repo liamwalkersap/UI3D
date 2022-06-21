@@ -1,0 +1,50 @@
+{
+    "welcomeFile": "/index.html",
+    "authenticationMethod": "route",
+    "logout": {
+        "logoutEndpoint": "/do/logout"
+    },
+    "routes": [
+        {
+            "authenticationType": "none",
+            "csrfProtection": false,
+            "source": "^/plicense/(.*)$",
+            "destination": "3dapp_plicense",
+            "target": "$1"
+        },
+        {
+            "authenticationType": "none",
+            "csrfProtection": false,
+            "source": "^/slicense/(.*)$",
+            "destination": "3dapp_slicense",
+            "target": "$1"
+        },        
+        {
+            "authenticationType": "none",
+            "csrfProtection": false,
+            "source": "^/profile/(.*)$",
+            "destination": "3dapp_profile",
+            "target": "$1"
+        },        
+        {
+            "authenticationType": "none",
+            "csrfProtection": false,
+            "source": "^/estimate/(.*)$",
+            "destination": "3dapp_estimate",
+            "target": "$1"
+        },
+        {
+            "authenticationType": "none",
+            "csrfProtection": false,
+            "source": "^/upload/(.*)$",
+            "destination": "3dapp_upload",
+            "target": "$1"
+        },        
+        {
+            "source": "^(.*)$",
+            "target": "$1",
+            "service": "html5-apps-repo-rt",
+            "authenticationType": "xsuaa"
+        }
+    ]
+}

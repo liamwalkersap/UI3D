@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run ui3d-ui",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/ui/index.html"
+      ],
+      "cwd": "${workspaceFolder}/ui/build",
+      "env": {
+        "PORT": "6004",
+        "run.config": "{\"handlerId\":\"html5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/ui3d/ui\"}"
+      },
+      "envFile": "${workspaceFolder}/ui/.env1",
+      "preLaunchTask": "Run ui3d"
+    }
+  ]
+}

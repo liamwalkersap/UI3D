@@ -1,0 +1,80 @@
+_schema-version: "3.2"
+ID: ui3d
+version: 0.0.1
+modules:
+- name: ui3d-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: ui3d-destination-service
+    parameters:
+      content-target: true
+  - name: ui3d_html_repo_host
+    parameters:
+      service-key:
+        name: ui3d_html_repo_host-key
+  - name: uaa_ui3d
+    parameters:
+      service-key:
+        name: uaa_ui3d-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: ui_ui3d_html_repo_host
+          ServiceInstanceName: ui3d-html5-app-host-service
+          ServiceKeyName: ui3d_html_repo_host-key
+          sap.cloud.service: ui
+        - Authentication: OAuth2UserTokenExchange
+          Name: ui_uaa_ui3d
+          ServiceInstanceName: ui3d-xsuaa-service
+          ServiceKeyName: uaa_ui3d-key
+          sap.cloud.service: ui
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: ui3d_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: ui3d_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - ui-content.zip
+      name: ui
+      target-path: resources/
+- name: ui
+  type: html5
+  path: ui
+  build-parameters:
+    builder: custom
+    commands:
+    - npm install
+    - npm run build
+    supported-platforms: []
+resources:
+- name: ui3d-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      version: 1.0.0
+    service: destination
+    service-name: ui3d-destination-service
+    service-plan: lite
+- name: ui3d_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: ui3d-html5-app-host-service
+    service-plan: app-host
+- name: uaa_ui3d
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: ui3d-xsuaa-service
+    service-plan: application
